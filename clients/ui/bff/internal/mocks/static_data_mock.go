@@ -82,7 +82,20 @@ func GetModelVersionMocks() []openapi.ModelVersion {
 		State:                    stateToPointer(openapi.MODELVERSIONSTATE_LIVE),
 	}
 
-	return []openapi.ModelVersion{model1, model2}
+	model3 := openapi.ModelVersion{
+		CustomProperties:         newCustomProperties(),
+		Name:                     "Version Three",
+		Description:              stringToPointer("This version didn't improve stuff and things"),
+		ExternalId:               stringToPointer("934589791"),
+		Id:                       stringToPointer("3"),
+		CreateTimeSinceEpoch:     stringToPointer("1725282249921"),
+		LastUpdateTimeSinceEpoch: stringToPointer("1725282249921"),
+		RegisteredModelId:        "3",
+		Author:                   stringToPointer("Sherlock Holmes"),
+		State:                    stateToPointer(openapi.MODELVERSIONSTATE_ARCHIVED),
+	}
+
+	return []openapi.ModelVersion{model1, model2, model3}
 }
 
 func GetModelVersionListMock() openapi.ModelVersionList {
@@ -168,6 +181,18 @@ func newCustomProperties() *map[string]openapi.MetadataValue {
 		"rnn": {
 			MetadataStringValue: &openapi.MetadataStringValue{
 				StringValue:  "",
+				MetadataType: "MetadataStringValue",
+			},
+		},
+		"AWS_KEY": {
+			MetadataStringValue: &openapi.MetadataStringValue{
+				StringValue:  "asdf89asdf098asdfa",
+				MetadataType: "MetadataStringValue",
+			},
+		},
+		"AWS_PASSWORD": {
+			MetadataStringValue: &openapi.MetadataStringValue{
+				StringValue:  "*AadfeDs34adf",
 				MetadataType: "MetadataStringValue",
 			},
 		},
