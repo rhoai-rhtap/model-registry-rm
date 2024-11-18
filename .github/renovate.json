@@ -5,7 +5,7 @@
   ],
   "branchPrefix": "renovate/",
   "baseBranches": ["main", "rhoai-2.16"],
-  "enabledManagers": ["dockerfile", "tekton", "rpm"],
+  "enabledManagers": ["dockerfile", "tekton"],
   "dockerfile": {
     "enabled": true,
     "additionalBranchPrefix": "{{baseBranch}}/",
