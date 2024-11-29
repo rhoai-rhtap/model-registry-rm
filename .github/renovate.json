@@ -48,7 +48,6 @@
           "major",
           "minor",
           "pin",
-          "pinDigest",
           "patch",
           "bump"
         ],
