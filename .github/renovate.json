@@ -17,12 +17,6 @@
       "semanticCommits": "enabled"
     },
     {
-      "matchManagers": ["dockerfile"],
-      "matchBaseBranches": ["test-1"],
-      "enabled": false,
-      "matchFileNames": ["*Dockerfile.konflux*"]
-    },
-    {
       "matchManagers": ["tekton"],
       "matchBaseBranches": ["test-1"],
       "matchUpdateTypes": ["digest"],
