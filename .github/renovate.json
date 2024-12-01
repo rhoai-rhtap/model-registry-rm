@@ -11,10 +11,14 @@
       "matchUpdateTypes": ["digest"],
       "matchFileNames": ["*Dockerfile.konflux*"],
       "enabled": true,
-      "pinDigests": true,
       "groupName": "Dockerfile Digest Updates - Main",
       "branchPrefix": "renovate/docker-main/",
       "semanticCommits": "enabled"
+    },
+    {
+      "matchManagers": ["dockerfile"],
+      "matchBaseBranches": ["test-1"],
+      "enabled": false
     },
     {
       "matchManagers": ["tekton"],
@@ -36,11 +40,24 @@
     "schedule": ["at any time"],
     "additionalBranchPrefix": "{{baseBranch}}/",
     "branchPrefix": "konflux/mintmaker/",
-    "pinDigests": true,
+    "packageRules": [
+      {
+        "matchUpdateTypes": [
+          "major",
+          "minor",
+          "pin",
+          "pinDigest",
+          "patch",
+          "bump"
+        ],
+        "enabled": false
+      }
+    ],
     "ignorePaths": [
       "**/Dockerfile",
       "!**/Dockerfile.konflux"
     ],
+    "pinDigests": true
   },
   "tekton": {
     "enabled": true,
